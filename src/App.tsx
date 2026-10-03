@@ -48,17 +48,17 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0c10] text-zinc-100 flex flex-col selection:bg-[#ff1a35] selection:text-white">
+    <div className="min-h-screen bg-[#f8f9fa] text-slate-900 flex flex-col selection:bg-red-600 selection:text-white">
       
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 p-4 rounded-xl bg-zinc-900 border border-[#ffd000]/50 text-white shadow-2xl flex items-center gap-3 animate-in slide-in-from-bottom duration-200">
-          <CheckCircle2 className="w-5 h-5 text-[#ffd000] shrink-0" />
+        <div className="fixed bottom-6 right-6 z-50 p-4 rounded-xl bg-slate-900 border border-amber-400 text-white shadow-xl flex items-center gap-3 animate-in slide-in-from-bottom duration-200">
+          <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0" />
           <span className="text-xs font-semibold">{toastMessage}</span>
         </div>
       )}
 
-      {/* Navigation Bar (References local src/assets folder) */}
+      {/* Navigation Bar */}
       <BossNavbar
         onOpenRateCard={() => setRateCardOpen(true)}
         onOpenBooking={handleOpenBooking}

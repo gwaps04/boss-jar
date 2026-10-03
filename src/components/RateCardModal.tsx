@@ -84,10 +84,9 @@ export const RateCardModal: React.FC<RateCardModalProps> = ({
     setDownloading(true);
     setTimeout(() => {
       setDownloading(false);
-      // Create a programmatic download summary text file
       const element = document.createElement('a');
       const file = new Blob([
-        `BOSS JAR MEDIA KIT & RATE CARD 2026\nFollowers: 1.8M+\nTotal Views: 450M+\nEngagement: 9.4%\nContact: bookings@bossjar.ph / +63 917 888 2677\nDirect Link: ${window.location.origin}`
+        `BOSS JAR MEDIA KIT & RATE CARD 2026\nFollowers: 1.8M+\nTotal Impressions: 450M+\nEngagement: 9.4%\nContact: bookings@bossjar.ph / +63 917 888 2677\nDirect Link: ${window.location.origin}`
       ], { type: 'text/plain' });
       element.href = URL.createObjectURL(file);
       element.download = 'Boss_Jar_Media_Kit_2026.txt';
@@ -99,24 +98,24 @@ export const RateCardModal: React.FC<RateCardModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-5xl bg-[#11131a] rounded-3xl border border-white/15 overflow-hidden shadow-2xl max-h-[92vh] flex flex-col"
+        className="relative w-full max-w-5xl bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-2xl max-h-[92vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="p-6 md:p-8 bg-zinc-950/80 border-b border-white/10 flex items-center justify-between">
+        <div className="p-6 md:p-8 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
           <div>
-            <div className="flex items-center gap-2 text-xs font-semibold text-[#ffd000] uppercase tracking-wider mb-1">
-              <Sparkles className="w-4 h-4 text-[#ffd000]" />
+            <div className="flex items-center gap-2 text-xs font-bold text-red-600 uppercase tracking-wider mb-1">
+              <Sparkles className="w-4 h-4 text-red-600" />
               Official 2026 Media Kit
             </div>
-            <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-white">
+            <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-slate-950">
               Campaign Packages & Deliverables
             </h2>
-            <p className="text-xs text-zinc-400 mt-1">
+            <p className="text-xs text-slate-600 mt-1">
               Transparent rate estimates for direct brands and creative media agencies.
             </p>
           </div>
@@ -124,7 +123,7 @@ export const RateCardModal: React.FC<RateCardModalProps> = ({
           <button
             onClick={onClose}
             type="button"
-            className="w-10 h-10 rounded-full bg-zinc-900 hover:bg-zinc-800 text-white flex items-center justify-center border border-white/15 transition-all"
+            className="w-10 h-10 rounded-full bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center border border-slate-200 transition-all shadow-2xs"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -132,33 +131,33 @@ export const RateCardModal: React.FC<RateCardModalProps> = ({
         </div>
 
         {/* Content Area */}
-        <div className="p-6 md:p-8 overflow-y-auto space-y-8">
+        <div className="p-6 md:p-8 overflow-y-auto space-y-8 bg-white">
           
           {/* Key Metric Highlights */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-2xl bg-zinc-900/60 border border-white/5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
             <div>
-              <div className="text-xl sm:text-2xl font-heading font-black text-[#ffd000] tabular-nums">
+              <div className="text-xl sm:text-2xl font-heading font-black text-slate-950 tabular-nums">
                 {CREATOR_METRICS.followers}
               </div>
-              <div className="text-[11px] text-zinc-400 uppercase font-semibold">Total Audience</div>
+              <div className="text-[11px] text-slate-600 uppercase font-bold">Total Audience</div>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-heading font-black text-white tabular-nums">
+              <div className="text-xl sm:text-2xl font-heading font-black text-red-600 tabular-nums">
                 {CREATOR_METRICS.totalViews}
               </div>
-              <div className="text-[11px] text-zinc-400 uppercase font-semibold">Video Views</div>
+              <div className="text-[11px] text-slate-600 uppercase font-bold">Video Views</div>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-heading font-black text-[#ff1a35] tabular-nums">
+              <div className="text-xl sm:text-2xl font-heading font-black text-amber-600 tabular-nums">
                 {CREATOR_METRICS.engagementRate}
               </div>
-              <div className="text-[11px] text-zinc-400 uppercase font-semibold">Avg Engagement</div>
+              <div className="text-[11px] text-slate-600 uppercase font-bold">Avg Engagement</div>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-heading font-black text-white tabular-nums">
+              <div className="text-xl sm:text-2xl font-heading font-black text-slate-950 tabular-nums">
                 {CREATOR_METRICS.brandPartners}
               </div>
-              <div className="text-[11px] text-zinc-400 uppercase font-semibold">Brands Trusted</div>
+              <div className="text-[11px] text-slate-600 uppercase font-bold">Brands Trusted</div>
             </div>
           </div>
 
@@ -169,40 +168,40 @@ export const RateCardModal: React.FC<RateCardModalProps> = ({
                 key={pkg.name}
                 className={`p-6 rounded-2xl border flex flex-col justify-between space-y-6 relative ${
                   pkg.popular
-                    ? 'bg-[#181a24] border-[#ffd000]/60 shadow-xl shadow-yellow-500/10'
-                    : 'bg-zinc-950/60 border-white/10'
+                    ? 'bg-amber-50/50 border-2 border-amber-400 shadow-md'
+                    : 'bg-white border-slate-200 shadow-2xs'
                 }`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#ffd000] text-black font-heading font-bold text-[10px] uppercase tracking-wider py-1 px-3 rounded-full shadow-md">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 font-heading font-bold text-[10px] uppercase tracking-wider py-1 px-3 rounded-full shadow-xs border border-amber-500/40">
                     Most Requested by Retailers
                   </div>
                 )}
 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-semibold text-zinc-400">
+                    <span className="text-xs font-bold text-slate-500">
                       {pkg.badge}
                     </span>
-                    <Zap className={`w-4 h-4 ${pkg.popular ? 'text-[#ffd000]' : 'text-[#ff1a35]'}`} />
+                    <Zap className={`w-4 h-4 ${pkg.popular ? 'text-amber-600' : 'text-red-600'}`} />
                   </div>
 
-                  <h3 className="font-heading font-bold text-lg text-white">
+                  <h3 className="font-heading font-bold text-lg text-slate-950">
                     {pkg.name}
                   </h3>
 
-                  <div className="text-xl font-heading font-extrabold text-[#ffd000] tabular-nums">
+                  <div className="text-xl font-heading font-extrabold text-red-600 tabular-nums">
                     {pkg.bracket}
                   </div>
 
-                  <p className="text-xs text-zinc-400 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {pkg.description}
                   </p>
 
-                  <div className="pt-3 border-t border-white/10 space-y-2 text-xs">
+                  <div className="pt-3 border-t border-slate-200 space-y-2 text-xs">
                     {pkg.features.map((feature) => (
-                      <div key={feature} className="flex items-start gap-2 text-zinc-300">
-                        <Check className="w-3.5 h-3.5 text-[#ffd000] shrink-0 mt-0.5" />
+                      <div key={feature} className="flex items-start gap-2 text-slate-700 font-medium">
+                        <Check className="w-3.5 h-3.5 text-red-600 shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -217,8 +216,8 @@ export const RateCardModal: React.FC<RateCardModalProps> = ({
                   type="button"
                   className={`w-full py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 ${
                     pkg.popular
-                      ? 'bg-[#ffd000] hover:bg-[#e6bc00] text-black shadow-lg shadow-yellow-500/20'
-                      : 'bg-white/10 hover:bg-white/20 text-white border border-white/15'
+                      ? 'bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-xs border border-amber-500/50'
+                      : 'bg-slate-900 hover:bg-black text-white'
                   }`}
                 >
                   Select Package
@@ -228,35 +227,35 @@ export const RateCardModal: React.FC<RateCardModalProps> = ({
           </div>
 
           {/* Compliance & Custom Scope Notice */}
-          <div className="p-4 rounded-xl bg-zinc-950 border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600">
             <span className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
               All packages include script approval rounds, sound copyright clearance, and analytics wrap-up report.
             </span>
-            <span className="text-zinc-500 font-mono">Rates subject to VAT & travel logistics</span>
+            <span className="text-slate-500 font-mono">Rates subject to standard VAT & logistics</span>
           </div>
 
         </div>
 
         {/* Footer Actions */}
-        <div className="p-6 bg-zinc-950/90 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="p-6 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <button
               onClick={handleDownload}
               type="button"
-              className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-white border border-white/15 transition-all flex items-center justify-center gap-2"
+              className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-xs font-bold text-slate-800 border border-slate-300 transition-all flex items-center justify-center gap-2 shadow-2xs"
             >
-              <Download className="w-4 h-4 text-[#ffd000]" />
+              <Download className="w-4 h-4 text-red-600" />
               <span>{downloading ? 'Preparing PDF...' : 'Download Rate Sheet'}</span>
             </button>
 
             <button
               onClick={handleCopyLink}
               type="button"
-              className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-xs font-semibold text-zinc-300 border border-white/10 transition-all flex items-center justify-center gap-2"
+              className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-xs font-bold text-slate-700 border border-slate-300 transition-all flex items-center justify-center gap-2 shadow-2xs"
             >
               {copied ? (
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
               ) : (
                 <Copy className="w-4 h-4" />
               )}
@@ -270,7 +269,7 @@ export const RateCardModal: React.FC<RateCardModalProps> = ({
               onSelectTier('Custom Enterprise Package');
             }}
             type="button"
-            className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#ffd000] hover:bg-[#e6bc00] text-xs font-bold uppercase tracking-wider text-black transition-all"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-xs font-bold uppercase tracking-wider text-white transition-all shadow-xs"
           >
             Custom Enterprise Quote
           </button>

@@ -23,40 +23,43 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
   ];
 
   return (
-    <footer className="bg-[#08090d] border-t border-white/10 pt-16 pb-12 text-zinc-400 text-xs">
+    <footer className="bg-slate-50 border-t border-slate-200 pt-16 pb-12 text-slate-600 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Row */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-200">
           
           {/* Brand Column */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 shrink-0">
                 <img
-                  src="/src/assets/logo.svg"
+                  src="/boss-jar-logo.png"
                   alt="Boss Jar Logo"
-                  className="w-full h-full object-contain filter drop-shadow-[0_2px_6px_rgba(255,26,53,0.4)]"
+                  className="w-full h-full object-contain filter drop-shadow-sm"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/src/assets/logo.svg';
+                  }}
                 />
               </div>
-              <span className="font-heading font-extrabold text-xl text-white tracking-tight">
+              <span className="font-heading font-extrabold text-xl text-slate-950 tracking-tight">
                 BOSS JAR
               </span>
             </div>
 
-            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-sm">
               The Philippines' premier relatable comedy creator and viral brand storytelling partner. Turning everyday street culture into enterprise-grade marketing impact.
             </p>
 
-            <div className="flex items-center gap-2 text-zinc-400 pt-1">
-              <ShieldCheck className="w-4 h-4 text-[#ffd000]" />
+            <div className="flex items-center gap-2 text-slate-600 pt-1 font-medium">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
               <span>100% Brand-Safe Organic Content & Registered Talent</span>
             </div>
           </div>
 
           {/* Quick Navigation Links */}
           <div className="md:col-span-3 space-y-3">
-            <div className="font-heading font-bold text-xs uppercase tracking-wider text-white">
+            <div className="font-heading font-bold text-xs uppercase tracking-wider text-slate-900">
               Navigation
             </div>
             <ul className="space-y-2">
@@ -64,7 +67,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="hover:text-white transition-colors"
+                    className="hover:text-red-600 font-medium transition-colors"
                   >
                     {link.name}
                   </a>
@@ -75,26 +78,26 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
 
           {/* Social Platforms & Management */}
           <div className="md:col-span-4 space-y-4">
-            <div className="font-heading font-bold text-xs uppercase tracking-wider text-white">
-              Official Platforms
+            <div className="font-heading font-bold text-xs uppercase tracking-wider text-slate-900">
+              Official Channels
             </div>
 
             <div className="grid grid-cols-2 gap-2 text-xs">
-              <div className="p-2.5 rounded-lg bg-zinc-900 border border-white/5">
-                <div className="text-white font-bold">TikTok</div>
-                <div className="text-[#ffd000] font-mono">1.8M Followers</div>
+              <div className="p-2.5 rounded-lg bg-white border border-slate-200">
+                <div className="text-slate-900 font-bold">TikTok</div>
+                <div className="text-red-600 font-mono font-bold">1.8M Followers</div>
               </div>
-              <div className="p-2.5 rounded-lg bg-zinc-900 border border-white/5">
-                <div className="text-white font-bold">Facebook</div>
-                <div className="text-zinc-400 font-mono">950K Community</div>
+              <div className="p-2.5 rounded-lg bg-white border border-slate-200">
+                <div className="text-slate-900 font-bold">Facebook</div>
+                <div className="text-slate-600 font-mono font-bold">950K Community</div>
               </div>
-              <div className="p-2.5 rounded-lg bg-zinc-900 border border-white/5">
-                <div className="text-white font-bold">YouTube</div>
-                <div className="text-zinc-400 font-mono">620K Subscribers</div>
+              <div className="p-2.5 rounded-lg bg-white border border-slate-200">
+                <div className="text-slate-900 font-bold">YouTube</div>
+                <div className="text-slate-600 font-mono font-bold">620K Subscribers</div>
               </div>
-              <div className="p-2.5 rounded-lg bg-zinc-900 border border-white/5">
-                <div className="text-white font-bold">Instagram</div>
-                <div className="text-zinc-400 font-mono">410K Followers</div>
+              <div className="p-2.5 rounded-lg bg-white border border-slate-200">
+                <div className="text-slate-900 font-bold">Instagram</div>
+                <div className="text-slate-600 font-mono font-bold">410K Followers</div>
               </div>
             </div>
 
@@ -102,14 +105,14 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
               <button
                 onClick={onOpenBooking}
                 type="button"
-                className="px-4 py-2 rounded-lg bg-[#ffd000] text-black font-heading font-bold text-xs uppercase tracking-wider hover:bg-[#e6bc00] transition-all"
+                className="px-4 py-2 rounded-lg bg-amber-400 text-slate-950 font-heading font-bold text-xs uppercase tracking-wider hover:bg-amber-300 transition-all border border-amber-500/50"
               >
                 Book Collab
               </button>
               <button
                 onClick={onOpenRateCard}
                 type="button"
-                className="px-4 py-2 rounded-lg bg-zinc-800 text-white font-heading font-semibold text-xs hover:bg-zinc-700 transition-all border border-white/10"
+                className="px-4 py-2 rounded-lg bg-white text-slate-800 font-heading font-semibold text-xs hover:bg-slate-100 transition-all border border-slate-300 shadow-2xs"
               >
                 Media Kit
               </button>
@@ -119,19 +122,19 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <div>
             © {new Date().getFullYear()} Boss Jar Media Management. All rights reserved. Built for retail, hospitality & F&B campaigns.
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1 text-zinc-400">
-              <Mail className="w-3.5 h-3.5" /> bookings@bossjar.ph
+            <span className="flex items-center gap-1 text-slate-600 font-medium">
+              <Mail className="w-3.5 h-3.5 text-red-600" /> bookings@bossjar.ph
             </span>
             <button
               onClick={scrollToTop}
               type="button"
-              className="w-8 h-8 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white flex items-center justify-center border border-white/10 transition-colors"
+              className="w-8 h-8 rounded-lg bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center border border-slate-200 transition-colors shadow-2xs"
               aria-label="Back to top"
             >
               <ArrowUp className="w-4 h-4" />
