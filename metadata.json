@@ -1,0 +1,8 @@
+{
+  "name": "Boss Jar — Official Portfolio & Media Kit",
+  "description": "Official single-page portfolio and media kit for Boss Jar, 1.8M-follower comedy creator, viral storyteller, and brand partner for retail, hospitality, and dining.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
