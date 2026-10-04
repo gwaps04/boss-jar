@@ -86,7 +86,7 @@ export const RateCardModal: React.FC<RateCardModalProps> = ({
       setDownloading(false);
       const element = document.createElement('a');
       const file = new Blob([
-        `BOSS JAR MEDIA KIT & RATE CARD 2026\nFollowers: 1.8M+\nTotal Impressions: 450M+\nEngagement: 9.4%\nContact: bookings@bossjar.ph / +63 917 888 2677\nDirect Link: ${window.location.origin}`
+        `BOSS JAR MEDIA KIT & RATE CARD 2026\nFollowers: 1.8M+\nAvg Views / Hit: 1.2M+\nEngagement: 9.4%\nContact: bookings@bossjar.ph / +63 917 888 2677\nDirect Link: ${window.location.origin}`
       ], { type: 'text/plain' });
       element.href = URL.createObjectURL(file);
       element.download = 'Boss_Jar_Media_Kit_2026.txt';
@@ -143,9 +143,9 @@ export const RateCardModal: React.FC<RateCardModalProps> = ({
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-heading font-black text-red-600 tabular-nums">
-                {CREATOR_METRICS.totalViews}
+                {CREATOR_METRICS.avgViewsPerHit}
               </div>
-              <div className="text-[11px] text-slate-600 uppercase font-bold">Video Views</div>
+              <div className="text-[11px] text-slate-600 uppercase font-bold">Avg Views / Hit</div>
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-heading font-black text-amber-600 tabular-nums">

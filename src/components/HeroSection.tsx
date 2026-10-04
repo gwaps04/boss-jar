@@ -1,21 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   ArrowUpRight, 
   Flame, 
   Play, 
-  TrendingUp, 
-  Users, 
-  Eye, 
-  CheckCircle2, 
-  ShieldCheck, 
   Store, 
   Hotel, 
   Utensils 
 } from 'lucide-react';
 import { CREATOR_METRICS } from '../data/portfolioData';
-
-// Direct Vite asset import: bundles file correctly in Vercel & Production builds
-import defaultHeroImg from '../assets/hero section image.jpg';
+import { HeroImageCarousel } from './HeroImageCarousel';
 
 interface HeroSectionProps {
   onOpenBooking: () => void;
@@ -28,24 +21,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onOpenRateCard,
   onExploreVault,
 }) => {
-  const [heroImgSrc, setHeroImgSrc] = useState<string>(defaultHeroImg);
-  const [heroImgFailed, setHeroImgFailed] = useState(false);
-
   return (
-    <section id="home" className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-white via-[#f8f9fa] to-white border-b border-slate-200/80 overflow-hidden">
-      
-      {/* Subtle, clean architectural grid lines instead of AI glow blobs */}
+    <section 
+      id="home" 
+      className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-[#f8fafc] border-b border-slate-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          {/* LEFT COLUMN: HIGH-ENERGY VALUE PROPOSITION */}
+          {/* LEFT COLUMN: REALISTIC & PUNCHY VALUE PROPOSITION */}
           <div className="lg:col-span-7 flex flex-col items-start space-y-6">
             
             {/* Live Status Kicker */}
             <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-red-50 border border-red-200 text-red-700">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-red-100/70 border border-red-200 text-red-700">
                 <Flame className="w-3.5 h-3.5 text-red-600 fill-red-600" />
-                #1 Viral Relatable Comedy
+                Relatable Pinoy Comedy
               </span>
               <span className="text-slate-400" aria-hidden="true">·</span>
               <span className="text-slate-700 flex items-center gap-1.5 font-medium">
@@ -68,8 +59,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               Meet <span className="text-slate-950 font-bold">Boss Jar</span> — the digital storyteller and comedy powerhouse trusted by <span className="bg-amber-100 text-slate-950 px-1.5 py-0.5 rounded font-bold">1.8 Million+ followers</span>. Delivering high-retention skits, organic product integrations, and genuine customer recall for retail, hotels, and food chains nationwide.
             </p>
 
-            {/* Proof Metric Strip (Tabular Numerals & Zero-Pill Design) */}
-            <div className="w-full grid grid-cols-3 gap-4 py-4 border-y border-slate-200 bg-white/70 px-4 rounded-xl shadow-2xs">
+            {/* Realistic Creator Metric Strip (450M+ Removed as requested) */}
+            <div className="w-full grid grid-cols-3 gap-4 py-4 border-y border-slate-200 bg-white px-5 rounded-xl shadow-2xs">
               <div>
                 <div className="text-2xl sm:text-3xl font-heading font-black text-slate-950 tabular-nums">
                   {CREATOR_METRICS.followers}
@@ -81,10 +72,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               <div>
                 <div className="text-2xl sm:text-3xl font-heading font-black text-red-600 tabular-nums">
-                  {CREATOR_METRICS.totalViews}
+                  {CREATOR_METRICS.avgViewsPerHit}
                 </div>
                 <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-0.5">
-                  Total Impressions
+                  Avg Views / Hit Skit
                 </div>
               </div>
 
@@ -145,103 +136,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           </div>
 
-          {/* RIGHT COLUMN: HERO VISUAL (Boss Jar attached hero section image) */}
+          {/* RIGHT COLUMN: HERO CAROUSEL COMPONENT */}
           <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-[430px] lg:max-w-none">
-              
-              {/* Clean Framed Card (No cheesy AI glows) */}
-              <div className="relative rounded-2xl overflow-hidden border-2 border-slate-900 bg-white shadow-xl">
-                
-                {/* Hero Image Container */}
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-100 group">
-                  {!heroImgFailed ? (
-                    <img
-                      src={heroImgSrc}
-                      alt="Boss Jar in front of Mayon Volcano and 7-Eleven"
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-102"
-                      onError={() => {
-                        // Fallback: Try public static path
-                        if (heroImgSrc !== '/hero-image.jpg') {
-                          setHeroImgSrc('/hero-image.jpg');
-                        } else {
-                          setHeroImgFailed(true);
-                        }
-                      }}
-                    />
-                  ) : (
-                    /* High-Fidelity CSS Styled Fallback Canvas */
-                    <div className="w-full h-full flex flex-col justify-end p-6 bg-gradient-to-t from-slate-900 via-slate-800 to-slate-950 relative text-white">
-                      <div className="relative my-auto flex flex-col items-center text-center py-10">
-                        <div className="w-24 h-24 rounded-full bg-red-600 border-4 border-amber-400 flex items-center justify-center mb-3 shadow-lg">
-                          <span className="font-heading font-black text-2xl text-white">BJ</span>
-                        </div>
-                        <h2 className="text-2xl font-heading font-extrabold text-white">
-                          BOSS JAR
-                        </h2>
-                        <p className="text-xs text-slate-300 mt-1 max-w-xs">
-                          Filipino Comedy Influencer & Brand Partner
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Top-Right Verified Badge */}
-                  <div className="absolute top-4 right-4 bg-slate-950/90 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-md">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs font-bold text-white">Verified Creator</span>
-                  </div>
-
-                  {/* Top-Left Location Tag */}
-                  <div className="absolute top-4 left-4 bg-slate-950/90 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs font-semibold text-white shadow-md">
-                    <span className="w-2 h-2 rounded-full bg-red-500"></span>
-                    Legazpi City · Mayon Volcano
-                  </div>
-
-                  {/* Bottom Content Overlay */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="p-4 rounded-xl bg-slate-950/95 backdrop-blur-md border border-white/10 text-white shadow-2xl">
-                      <div className="flex items-center justify-between mb-2">
-                        <div>
-                          <div className="text-[11px] font-bold text-amber-400 uppercase tracking-wider">
-                            Real Influence, Real Conversion
-                          </div>
-                          <div className="text-sm font-heading font-bold text-white">
-                            Boss Jar Brand Impact
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-1 bg-red-600/30 text-red-300 px-2.5 py-0.5 rounded text-xs font-bold tabular-nums border border-red-500/30">
-                          <TrendingUp className="w-3.5 h-3.5" />
-                          +34% Foot Traffic
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-2 text-xs text-slate-300 pt-2 border-t border-white/10">
-                        <div className="flex items-center gap-1.5">
-                          <Users className="w-3.5 h-3.5 text-amber-400" />
-                          <span>1.8M Active Followers</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <Eye className="w-3.5 h-3.5 text-red-400" />
-                          <span>450M+ Organic Views</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Bottom Card Footer */}
-                <div className="px-4 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs text-slate-600">
-                  <span className="flex items-center gap-1.5 font-semibold text-slate-800">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                    Brand-Safe Commercial Storyteller
-                  </span>
-                  <span className="text-slate-500 font-mono text-[11px]">Media Kit 2026</span>
-                </div>
-
-              </div>
-            </div>
+            <HeroImageCarousel />
           </div>
 
         </div>

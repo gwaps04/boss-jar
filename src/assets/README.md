@@ -1,17 +1,21 @@
-# Boss Jar Brand Assets Directory (`src/assets`)
+# Boss Jar Brand Assets & Carousel Slides
 
-Place your official logo and photography assets in this folder:
+### 1. Hero Carousel Slides (`slide 1.png` through `slide 6.png`)
+The Hero Section carousel is configured to display 6 slides.
+You can place or replace your files in:
+- **`src/assets/carousel/`** or **`public/carousel/`** (or directly in **`src/assets/`**)
 
-1. **Navigation & Brand Logo**:
-   - Filename: `boss jar navigation logo.png` (or `logo.png` / `logo.jpg`)
-   - Used in: `BossNavbar.tsx` and brand badges across the site.
-   - Fallback: Pre-bundled vector `src/assets/logo.svg` is automatically used if the image file is not found.
+#### Slide Breakdown:
+- **`slide 1.png`**: Boss Jar on Location (Legazpi City · Mayon Volcano Backdrop)
+- **`slide 2.png`**: Official Boss Jar Rider Emblem & Motorcycle Trademark Logo
+- **`slide 3.png`**: Everyday Pinoy Street Stories (Viral Convenience Store & Food Skits)
+- **`slide 4.png`**: Rider Culture & Big Bike Tour Adventures
+- **`slide 5.png`**: Commercial Brand Activations & Retail Foot-Traffic Campaigns
+- **`slide 6.png`**: 1.8M Pinoy Community & Grassroots Relatability
 
-2. **Hero Section Image**:
-   - Filename: `hero section image.png` (or `hero section image.jpg` / `hero.jpg`)
-   - Used in: `HeroSection.tsx` (Boss Jar with Mayon Volcano & 7-Eleven background).
-   - Fallback: High-contrast styled portrait container with cinematic backdrop and lighting effects.
+### 2. Navigation Brand Logo
+- **`boss jar navigation logo.png`** (or `logo.png` / `logo.jpg`)
+- Used in `BossNavbar.tsx` with vector SVG fallback.
 
-3. **Optional Additional Media**:
-   - `skits/`: Video reel stills for the Comedy Vault
-   - `partnerships/`: Partner logos (Jollibee, 7-Eleven, Grab, Red Bull, local resorts)
+### 3. Hero Single Shot Reference
+- **`hero section image.jpg`**
