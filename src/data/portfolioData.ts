@@ -20,7 +20,7 @@ export const VIRAL_SKITS: SkitVideo[] = [
     duration: 'Reel',
     date: 'Viral Mega Hit',
     description: 'Boss Jar’s multi-million view comedy compilation packed with raw Pinoy humor, unscripted street laughs, and viral comedic timing.',
-    thumbnailUrl: '/carousel/slide 1.jpg',
+    thumbnailUrl: '/thumbnails/thumail 1.png',
     videoUrl: 'https://www.facebook.com/reel/1695508678832031',
     fbReelId: '1695508678832031',
     clientTieIn: 'High-Retention Organic Viral Reach'
@@ -35,7 +35,7 @@ export const VIRAL_SKITS: SkitVideo[] = [
     duration: 'Reel',
     date: 'Fan Favorite',
     description: 'Suspense meets classic Pinoy punchline comedy (#ToygunOnly). Authentic everyday humor that sparks massive engagement and funny audience comments.',
-    thumbnailUrl: '/carousel/slide 2.jpg',
+    thumbnailUrl: '/thumbnails/thumail 2.png',
     videoUrl: 'https://www.facebook.com/reel/1750681099378156',
     fbReelId: '1750681099378156',
     clientTieIn: 'Everyday Pinoy Storytelling'
@@ -50,7 +50,7 @@ export const VIRAL_SKITS: SkitVideo[] = [
     duration: 'Reel',
     date: 'Brand Collaboration',
     description: 'Direct commercial brand integration with Jamelah Olshoppe! Hilarious street choice between an iPhone or a lollipop, driving genuine customer recall and retail store footfall.',
-    thumbnailUrl: '/carousel/slide 5.jpg',
+    thumbnailUrl: '/thumbnails/thumail 3.png',
     videoUrl: 'https://www.facebook.com/reel/3088047281526948',
     fbReelId: '3088047281526948',
     clientTieIn: 'Jamelah Olshoppe Retail Campaign'
@@ -65,7 +65,7 @@ export const VIRAL_SKITS: SkitVideo[] = [
     duration: 'Reel',
     date: 'Bicol Tour Life',
     description: 'Boss Jar takes his trademark high energy on the provincial highway across Sorsogon, greeting locals, celebrating Bicolano culture, and showcasing scenic spots.',
-    thumbnailUrl: '/carousel/slide 6.jpg',
+    thumbnailUrl: '/thumbnails/thumail 4.png',
     videoUrl: 'https://www.facebook.com/reel/1765900988008451',
     fbReelId: '1765900988008451',
     clientTieIn: 'Regional Tourism & Road Tour Activation'
@@ -80,7 +80,7 @@ export const VIRAL_SKITS: SkitVideo[] = [
     duration: 'Reel',
     date: 'Trending Hit',
     description: 'The ultimate Pinoy dining catastrophe: all the ulam is ready, but walang kanin! Relatable family and dining humor that took Facebook by storm.',
-    thumbnailUrl: '/carousel/slide 3.jpg',
+    thumbnailUrl: '/thumbnails/thumail 5.png',
     videoUrl: 'https://www.facebook.com/reel/977219072068327',
     fbReelId: '977219072068327',
     clientTieIn: 'Food & Restaurant Brand Integration'
@@ -95,7 +95,7 @@ export const VIRAL_SKITS: SkitVideo[] = [
     duration: 'Reel',
     date: 'Rider Culture',
     description: 'Street-level motorcycle banter, vehicle horn etiquette, and traffic comedy that only Boss Jar can deliver with effortless Pinoy laughs.',
-    thumbnailUrl: '/carousel/slide 4.jpg',
+    thumbnailUrl: '/thumbnails/thumail 6.png',
     videoUrl: 'https://www.facebook.com/reel/1433390418689106',
     fbReelId: '1433390418689106',
     clientTieIn: 'Automotive & Rider Lifestyle Campaign'
