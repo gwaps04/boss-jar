@@ -1,7 +1,7 @@
 export interface SkitVideo {
   id: string;
   title: string;
-  category: 'Everyday Relatable' | 'Food & Street' | 'Retail & Stores' | 'Motorcycle & Trips' | 'Hotels & Resorts';
+  category: 'Everyday Relatable' | 'Food & Street' | 'Retail & Stores' | 'Motorcycle & Trips' | 'Hotels & Resorts' | 'Viral Skits';
   views: string;
   likes: string;
   comments: string;
@@ -9,7 +9,10 @@ export interface SkitVideo {
   date: string;
   description: string;
   thumbnailUrl: string;
+  videoUrl: string;
+  fbReelId: string;
   clientTieIn?: string;
+  tagline?: string;
 }
 
 export interface PartnershipCase {
