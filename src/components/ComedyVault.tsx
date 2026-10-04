@@ -44,8 +44,12 @@ function resolveThumbnailFromAssets(slotNum: number): string | null {
 
 export const ComedyVault: React.FC<ComedyVaultProps> = ({ onSelectSkit }) => {
   return (
-    <section id="comedy-vault" className="py-20 md:py-24 bg-white border-b border-slate-200 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="comedy-vault" className="py-20 md:py-24 bg-gradient-to-b from-[#f0f5fa] via-[#f8fafc] to-[#ffffff] border-b border-slate-200/90 relative overflow-hidden">
+      {/* Subtle atmospheric ambient glow matching ocean blue theme */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-100/40 rounded-full blur-3xl pointer-events-none -translate-y-1/2" aria-hidden="true" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl pointer-events-none translate-y-1/3" aria-hidden="true" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Perfectly Centered Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-14 md:mb-16">

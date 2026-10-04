@@ -67,8 +67,12 @@ export const CollabBookingSection: React.FC<CollabBookingSectionProps> = ({ onOp
   };
 
   return (
-    <section id="collab" className="py-20 md:py-24 bg-[#f8f9fa] border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="collab" className="py-20 md:py-24 bg-gradient-to-b from-[#ffffff] via-[#f0f6fb] to-[#e4eef7] border-b border-slate-300 relative overflow-hidden">
+      {/* Subtle atmospheric accents */}
+      <div className="absolute top-1/3 -right-24 w-96 h-96 bg-cyan-100/60 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-10 -left-20 w-80 h-80 bg-blue-100/50 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           

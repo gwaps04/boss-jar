@@ -12,8 +12,12 @@ import {
 
 export const AboutBossSection: React.FC = () => {
   return (
-    <section id="about-boss" className="py-20 md:py-24 bg-white border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about-boss" className="py-20 md:py-24 bg-gradient-to-b from-[#e8f1f8] via-[#f4f8fc] to-[#ffffff] border-b border-slate-200/90 relative overflow-hidden">
+      {/* Subtle pearl and silver ambient lighting */}
+      <div className="absolute top-10 right-10 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-cyan-100/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           

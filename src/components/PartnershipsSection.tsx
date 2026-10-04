@@ -84,8 +84,12 @@ export const PartnershipsSection: React.FC<PartnershipsSectionProps> = ({
     : PARTNER_BRANDS.filter((brand) => brand.category === selectedCategory);
 
   return (
-    <section id="partnerships" className="py-20 md:py-24 bg-[#f8f9fa] border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="partnerships" className="py-20 md:py-24 bg-gradient-to-b from-[#ffffff] via-[#f1f6fb] to-[#e8f1f8] border-b border-slate-200 relative overflow-hidden">
+      {/* Subtle ocean theme ambient accents */}
+      <div className="absolute top-1/4 -left-32 w-80 h-80 bg-cyan-100/50 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
